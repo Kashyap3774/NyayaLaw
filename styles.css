@@ -1,0 +1,414 @@
+/* General Styling Improvements */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+}
+
+/* Form Styling and UX Feedback */
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #004080;
+    background-color: #f1faff;
+    box-shadow: 0 0 5px rgba(0, 64, 128, 0.4);
+}
+
+input:invalid, textarea:invalid {
+    border-color: #e74c3c;
+}
+
+input:valid, textarea:valid {
+    border-color: #27ae60;
+}
+
+/* Button Loading Indicator */
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.loading {
+    position: relative;
+}
+
+button.loading .loading-text {
+    margin-right: 10px;
+}
+
+button.loading:after {
+    content: '';
+    border: 2px solid #fff;
+    border-top: 2px solid #004080;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Focused Form Success Animation */
+.form-success {
+    animation: successPop 0.4s ease;
+}
+
+@keyframes successPop {
+    0% {
+        transform: scale(0.9);
+        background-color: #004080;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #27ae60;
+    }
+}
+
+/* Custom Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Social Media Bar */
+.social-bar {
+    background-color: #004080;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Header Styling */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Logo Background Styling */
+/* Logo Background Styling */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-background {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for a professional look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: inline-block;
+}
+
+.logo-container img {
+    height: 80px;
+    display: block;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #003366; /* Darker blue for the navbar */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* White text for clear contrast against the blue background */
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #ffcc00; /* Gold color on hover */
+    color: #003366; /* Dark blue text on hover for contrast */
+    transform: scale(1.1); /* Slightly enlarge text on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #ffcc00; /* Highlight active link */
+    color: #003366 !important; /* Dark text when active */
+}
+
+.navbar-toggler {
+    border-color: #ffffff !important; /* Ensure white border for the hamburger button */
+}
+
+.navbar-toggler-icon {
+    color: #ffffff !important; /* Ensure the lines inside the hamburger button are white */
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important; /* White bars for the hamburger icon */
+}
+
+
+/* Hover animation for larger text */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease, transform 0.3s ease; /* Text animation */
+}
+
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1); /* Enlarge text slightly on hover */
+}
+
+/* Mobile Navbar Styling */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+
+
+/* Hero Section */
+.hero {
+    background-color: #003366;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.hero .btn-cta {
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Boxed Sections */
+.content-box {
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 80%;
+    padding: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Service Cards */
+.service-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.service-card:hover {
+    background-color: #ffcc00;
+    transform: translateY(-5px);
+}
+
+.service-title {
+    color: #004080;
+    font-weight: bold;
+}
+
+/* Consultation Form */
+#consultation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    animation: fadeInForm 0.7s ease-in-out both;
+}
+
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#consultation-form input, #consultation-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    background-color: #fff;
+    outline: none;
+}
+
+#consultation-form input:focus, #consultation-form textarea:focus {
+    border-color: #004080;
+    box-shadow: 0 0 10px rgba(0, 64, 128, 0.2);
+    background-color: #f1faff;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #004080;
+    transition: color 0.3s ease;
+}
+
+.form-group input:focus + label, .form-group textarea:focus + label {
+    color: #ffcc00;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#consultation-form button, #whatsapp-btn {
+    background-color: #004080;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+}
+
+#consultation-form button:hover, #whatsapp-btn:hover {
+    background-color: #ffcc00;
+    transform: translateY(-3px);
+}
+
+/* Button Animation */
+@keyframes buttonHover {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+.form-buttons button:hover {
+    animation: buttonHover 0.2s ease forwards;
+}
+
+/* Form Submit Success Animation */
+@keyframes formSuccess {
+    0% {
+        background-color: #004080;
+        transform: scale(1);
+    }
+    50% {
+        background-color: #ffcc00;
+        transform: scale(1.05);
+    }
+    100% {
+        background-color: #004080;
+        transform: scale(1);
+    }
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    animation: formSuccess 0.5s ease-in-out;
+}
+
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+footer .social-media a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+
+footer .social-media a:hover {
+    transform: scale(1.1);
+}
+
+footer .footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer .footer-links a:hover {
+    color: #ffcc00;
+}
